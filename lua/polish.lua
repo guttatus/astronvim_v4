@@ -7,7 +7,9 @@ if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- Set up custom filetypes
 vim.filetype.add {
   extension = {
-    foo = "fooscript",
+      v = "verilog",
+      h = "c",
+      hpp = "cpp"
   },
   filename = {
     ["Foofile"] = "fooscript",

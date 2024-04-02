@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -55,6 +53,18 @@ return {
         --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
         --   desc = "Previous buffer",
         -- },
+        -- second key is the lefthand side of the map
+        -- mappings seen under group name "Buffer"
+        ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+        -- tables with the `name` key will be registered with which-key if it's installed
+        -- this is useful for naming menus
+        ["<leader>b"] = { name = "Buffers" },
+        ["<leader>a"] = { "<cmd>RnvimrToggle<cr>", desc = "Ranger" },
+        ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "float terminal" },
+        ["<C-PageDown>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next Buffer" },
+        ["<C-PageUp>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous Buffer"},
+        ["<leader>fd"] = { "<cmd>TodoTelescope<cr>", desc = "Find TODO List"},
+        ["<C-a>"]      = { "<cmd>TroubleToggle<cr>", desc = "Trouble List"},
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -74,6 +84,7 @@ return {
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+        ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "float terminal" },
       },
     },
   },
