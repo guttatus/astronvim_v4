@@ -30,6 +30,9 @@ return {
             throttle = 50, -- Debounce lsp signature help request by 50ms
           },
         },
+        hover = {
+          enabled = false,
+        }
       },
       -- you can enable a preset for easier configuration
       presets = {

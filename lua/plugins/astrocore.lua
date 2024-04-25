@@ -61,10 +61,13 @@ return {
         ["<leader>b"] = { name = "Buffers" },
         ["<leader>a"] = { "<cmd>RnvimrToggle<cr>", desc = "Ranger" },
         ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "float terminal" },
-        ["<C-PageDown>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next Buffer" },
-        ["<C-PageUp>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous Buffer"},
+        ["<C-PageDown>"] = { function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next Buffer" },
+        ["<C-PageUp>"] = { function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous Buffer"},
         ["<leader>fd"] = { "<cmd>TodoTelescope<cr>", desc = "Find TODO List"},
         ["<C-a>"]      = { "<cmd>TroubleToggle<cr>", desc = "Trouble List"},
+        ["mouse8"]     = {"<C-i>"},
+        ["mouse9"]     = {"<C-o>"},
+
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
