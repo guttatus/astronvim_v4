@@ -129,10 +129,6 @@ return {
     event = "BufRead",
     config = function() require("todo-comments").setup() end,
   },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
   -- some theme
   {
     "folke/tokyonight.nvim",
@@ -209,12 +205,12 @@ return {
   {
     "nvim-orgmode/orgmode",
     event = "VeryLazy",
-    ft = { 'org' },
+    ft = { "org" },
     config = function()
-      require("orgmode").setup({
+      require("orgmode").setup {
         org_agenda_files = "~/orgfiles/**/*",
         org_default_notes_file = "~/orgfiles/refile.org",
-      })
+      }
     end,
   },
   -- By adding to the which-key config and using our helper function you can add more which-key registered bindings
@@ -224,12 +220,13 @@ return {
     opts = {
       icons = { group = vim.g.icons_enabled and "" or "+", separator = "" },
       disable = { filetypes = { "TelescopePrompt" } },
-      window = {
+      win = {
         border = "single", -- none, single, double, shadow
-        position = "bottom", -- bottom, top
-        margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
+        -- position = "bottom", -- bottom, top
         padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+        wo = {
+          winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+        },
         zindex = 1000, -- positive value to position WhichKey above other floating windows.
       },
     },

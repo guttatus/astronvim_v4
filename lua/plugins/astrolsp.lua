@@ -98,7 +98,7 @@ return {
       -- default handler, first entry with no key
       function(server, opts) require("lspconfig")[server].setup(opts) end,
       -- custom function handler for pyright
-      pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end,
+      -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end,
 
       -- rust_analyzer = false,
     },
